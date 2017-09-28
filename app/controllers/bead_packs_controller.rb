@@ -69,6 +69,6 @@ class BeadPacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bead_pack_params
-      params.require(:bead_pack).permit(:count, :bead_type_id, :size_id, :name, :new_type_name, :new_size_name)
+      params.require(:bead_pack).permit(:count, :bead_type_id, :size_id, :name, :new_type_name, :new_size_name, :picture)
     end
 end

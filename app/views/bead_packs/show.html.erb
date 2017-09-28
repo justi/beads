@@ -21,5 +21,9 @@
   <%= @bead_pack.name %>
 </p>
 
+<p>
+  <%= image_tag(@bead_pack.picture_url, width: 600) if @bead_pack.picture.present? %>
+</p>
+
 <%= link_to 'Edit', edit_bead_pack_path(@bead_pack) %> |
 <%= link_to 'Back', bead_packs_path %>
