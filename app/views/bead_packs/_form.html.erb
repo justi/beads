@@ -1,0 +1,37 @@
+<%= form_for(@bead_pack) do |f| %>
+  <% if @bead_pack.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bead_pack.errors.count, "error") %> prohibited this bead_pack from being saved:</h2>
+
+      <ul>
+      <% @bead_pack.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :count %><br>
+    <%= f.text_field :count %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :colors %><br>
+    <%= f.text_field :colors %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

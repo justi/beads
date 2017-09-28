@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bead Packs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Count</th>
+      <th>Type</th>
+      <th>Size</th>
+      <th>Colors</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bead_packs.each do |bead_pack| %>
+      <tr>
+        <td><%= bead_pack.count %></td>
+        <td><%= bead_pack.type %></td>
+        <td><%= bead_pack.size %></td>
+        <td><%= bead_pack.colors %></td>
+        <td><%= bead_pack.name %></td>
+        <td><%= link_to 'Show', bead_pack %></td>
+        <td><%= link_to 'Edit', edit_bead_pack_path(bead_pack) %></td>
+        <td><%= link_to 'Destroy', bead_pack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bead pack', new_bead_pack_path %>

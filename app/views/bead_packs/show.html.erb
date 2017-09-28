@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @bead_pack.count %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @bead_pack.type %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @bead_pack.size %>
+</p>
+
+<p>
+  <strong>Colors:</strong>
+  <%= @bead_pack.colors %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bead_pack.name %>
+</p>
+
+<%= link_to 'Edit', edit_bead_pack_path(@bead_pack) %> |
+<%= link_to 'Back', bead_packs_path %>
