@@ -8,7 +8,6 @@
         <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
   <% end %>
 
   <div class="field">
@@ -16,13 +15,15 @@
     <%= f.text_field :count %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
+
+  <%= f.collection_select :type_id, Type.find_each, :id, :name, prompt: "Select a Bead Type" %> 
+  or create one: <%= f.text_field :new_type_name %>
+  </div> 
+
   <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
-  </div>
+
+  <%= f.collection_select :size_id, Size.find_each, :id, :name, prompt: "Select a Bead Size" %>
+  </div> 
   <!--<div class="field">-->
   
   <!--</div>-->
