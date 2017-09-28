@@ -1,4 +1,4 @@
-class Size < ActiveRecord::Base
+class BeadType < ActiveRecord::Base
     has_many :bead_packs
     
     validates :name, presence: true

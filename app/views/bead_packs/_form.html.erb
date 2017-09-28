@@ -9,28 +9,30 @@
       <% end %>
       </ul>
   <% end %>
-
-  <div class="field">
-    <%= f.label :count %><br>
-    <%= f.text_field :count %>
-  </div>
-  <div class="field">
-
-  <%= f.collection_select :type_id, Type.find_each, :id, :name, prompt: "Select a Bead Type" %> 
-  or create one: <%= f.text_field :new_type_name %>
-  </div> 
-
-  <div class="field">
-
-  <%= f.collection_select :size_id, Size.find_each, :id, :name, prompt: "Select a Bead Size" %>
-  </div> 
-  <!--<div class="field">-->
   
-  <!--</div>-->
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+  <%= f.collection_select :bead_type_id, BeadType.find_each, :id, :name, prompt: "Select a Bead Type" %> 
+  or create one: <%= f.text_field :new_type_name %>
+  </div> 
+
+  <div class="field">
+  <%= f.collection_select :size_id, Size.find_each, :id, :name, prompt: "Select a Bead Size" %>
+  or create one: <%= f.text_field :new_size_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :count %><br>
+    <%= f.text_field :count %>
+  </div>
+  <!--<div class="field">-->
+  
+  <!--</div>-->
+  
   <div class="actions">
     <%= f.submit %>
   </div>

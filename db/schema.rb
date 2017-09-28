@@ -15,23 +15,23 @@ ActiveRecord::Schema.define(version: 20170928132535) do
 
   create_table "bead_packs", force: :cascade do |t|
     t.float    "count"
-    t.integer  "type_id"
+    t.integer  "bead_type_id"
     t.integer  "size_id"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
+  add_index "bead_packs", ["bead_type_id"], name: "index_bead_packs_on_bead_type_id"
   add_index "bead_packs", ["size_id"], name: "index_bead_packs_on_size_id"
-  add_index "bead_packs", ["type_id"], name: "index_bead_packs_on_type_id"
 
-  create_table "sizes", force: :cascade do |t|
+  create_table "bead_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "types", force: :cascade do |t|
+  create_table "sizes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

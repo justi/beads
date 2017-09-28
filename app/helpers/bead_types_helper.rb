@@ -1,0 +1,2 @@
+module BeadTypesHelper
+end
