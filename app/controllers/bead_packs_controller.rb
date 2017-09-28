@@ -25,7 +25,6 @@ class BeadPacksController < ApplicationController
   # POST /bead_packs.json
   def create
     @bead_pack = BeadPack.new(bead_pack_params)
-
     respond_to do |format|
       if @bead_pack.save
         format.html { redirect_to @bead_pack, notice: 'Bead pack was successfully created.' }

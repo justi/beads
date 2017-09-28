@@ -16,6 +16,11 @@ class BeadPack < ActiveRecord::Base
       self.size = Size.find_or_create_by(name: new_size_name) unless new_size_name.blank?
     end
     
+    after_save :create_colors
+    def create_colors
+        ExtractColors.new().call(self)
+    end
+    
     def to_s
         self.name
     end
