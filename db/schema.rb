@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928124326) do
+ActiveRecord::Schema.define(version: 20170928132535) do
 
   create_table "bead_packs", force: :cascade do |t|
     t.float    "count"
@@ -24,5 +24,17 @@ ActiveRecord::Schema.define(version: 20170928124326) do
 
   add_index "bead_packs", ["size_id"], name: "index_bead_packs_on_size_id"
   add_index "bead_packs", ["type_id"], name: "index_bead_packs_on_type_id"
+
+  create_table "sizes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
