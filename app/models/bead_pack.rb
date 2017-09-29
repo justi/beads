@@ -1,6 +1,8 @@
 class BeadPack < ActiveRecord::Base
     belongs_to :size
     belongs_to :bead_type
+    has_many :bead_color_packs
+    has_many :bead_colors, through: :bead_color_packs
     
     validates :name, :size, :bead_type, :picture, presence: true
     

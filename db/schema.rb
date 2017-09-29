@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928185916) do
+ActiveRecord::Schema.define(version: 20170929122723) do
+
+  create_table "bead_color_packs", force: :cascade do |t|
+    t.integer  "bead_color_id"
+    t.integer  "bead_pack_id"
+    t.float    "color_percentage"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "bead_color_packs", ["bead_color_id"], name: "index_bead_color_packs_on_bead_color_id"
+  add_index "bead_color_packs", ["bead_pack_id"], name: "index_bead_color_packs_on_bead_pack_id"
+
+  create_table "bead_colors", force: :cascade do |t|
+    t.integer  "r"
+    t.integer  "g"
+    t.integer  "b"
+    t.float    "h"
+    t.float    "l"
+    t.float    "s"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bead_packs", force: :cascade do |t|
     t.float    "count"
