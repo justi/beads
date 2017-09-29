@@ -5,8 +5,8 @@ class CreateBeadColors < ActiveRecord::Migration
       t.integer :g
       t.integer :b
       t.float :h
-      t.float :l
       t.float :s
+      t.float :l
 
       t.timestamps null: false
     end
