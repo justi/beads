@@ -13,8 +13,14 @@ class ExtractColors
         Miro.options[:method] = 'histogram'
         colors = dominant_colors.new bead_pack.picture.path if bead_pack.picture.present?
         hls = colors.to_hsl
-        binding.pry
-        result = zip_three_arrays(rgb, hls, percentage)
+        
+        zip_three_arrays(rgb, hls, percentage).each do |result|
+            color = ColorFactory.create_color_from_array(result)
+            if color
+                stworz posrednia
+            end
+        end
+        
     end
     
     def zip_three_arrays(rgb, hls, percentage)
