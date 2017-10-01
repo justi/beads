@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bead_colors
   resources :bead_types
   resources :sizes
   resources :bead_types
