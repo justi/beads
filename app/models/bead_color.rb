@@ -5,4 +5,8 @@ class BeadColor < ActiveRecord::Base
     def to_rgb
       "#{self.r}, #{self.g}, #{self.b}"
     end
+    
+     def to_hsl
+      "#{(self.h*360)}, #{(self.s*100)}%, #{(self.l*100)}%"
+    end
 end

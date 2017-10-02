@@ -1,6 +1,10 @@
 class ExtractColors
     def initialize(dominant_colors: Miro::DominantColors)
         @dominant_colors = dominant_colors
+        Miro.options[:quantize] = 'sRGB'
+        Miro.options[:resolution] = '100x100'
+        Miro.options[:color_count] = 4
+
     end
     
     def call(bead_pack)
@@ -44,4 +48,8 @@ class ExtractColors
     end
     
     attr_reader :dominant_colors, :bead_pack_id
+end
+
+module Color
+    SRGB = Color::RGB
 end
