@@ -1,8 +1,8 @@
 class ColorFactory
-    def self.create_color_from_array(array)
+    def self.find_or_create_color(array)
         rgb = array.first
         hsl = array.second
-        BeadColor.create(
+        BeadColor.find_or_create_by(
             r: rgb.first,
             g: rgb.second,
             b: rgb.third,

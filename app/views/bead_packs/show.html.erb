@@ -22,7 +22,10 @@
 </p>
 
 <p>
-  <%= image_tag(@bead_pack.picture_url, width: 600) if @bead_pack.picture.present? %>
+  <%= image_tag(@bead_pack.picture_url, width: 400) if @bead_pack.picture.present? %>
+</p>
+<p>        
+<%= print_color_palette @bead_pack %>
 </p>
 
 <%= link_to 'Edit', edit_bead_pack_path(@bead_pack) %> |

@@ -35,7 +35,7 @@ class ExtractColors
     end
     
     def create_colors(colors, percentage, bead_pack)
-        bead_color = ColorFactory.create_color_from_array(colors)
+        bead_color = ColorFactory.find_or_create_color(colors)
         BeadColorPack.create(
             bead_color: bead_color,
             bead_pack: bead_pack,
