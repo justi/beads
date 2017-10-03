@@ -22,11 +22,11 @@
 </p>
 
 <p>
-  <%= image_tag(@bead_pack.picture_url, width: 400) if @bead_pack.picture.present? %>
+  <%= image_tag(@bead_pack.picture_url, width: 400, class: 'img-thumbnail') if @bead_pack.picture.present? %>
 </p>
 <p>        
 <%= print_color_palette @bead_pack %>
 </p>
 
-<%= link_to 'Edit', edit_bead_pack_path(@bead_pack) %> |
-<%= link_to 'Back', bead_packs_path %>
+<%= link_to 'Edit', edit_bead_pack_path(@bead_pack), class:"btn btn-default" %> |
+<%= link_to 'Back', bead_packs_path, class:"btn btn-default" %>

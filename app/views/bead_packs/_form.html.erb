@@ -1,44 +1,31 @@
-<%= form_for(@bead_pack) do |f| %>
-  <% if @bead_pack.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bead_pack.errors.count, "error") %> prohibited this bead_pack from being saved:</h2>
-
-      <ul>
-      <% @bead_pack.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-  <% end %>
-  
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for(@bead_pack) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      
+      <div class="form-group">
+        <%= f.text_field :name, class:'form-control', placeholder:"Name" %>
+      </div>
+    
+      <div class="form-group">
+        <%= f.collection_select :bead_type_id, BeadType.find_each, :id, :name, { prompt: "Select a Bead Type" }, { class: 'form-control'} %> 
+        or create one: <%= f.text_field :new_type_name, class:'form-control', placeholder:"new type" %>
+      </div> 
+    
+      <div class="form-group">
+      <%= f.collection_select :size_id, Size.find_each, :id, :name, { prompt: "Select a Bead size" }, { class: 'form-control'} %>
+      or create one: <%= f.text_field :new_size_name, class:'form-control', placeholder:"new size" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.text_field :count, class:'form-control', placeholder:"Count" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.file_field :picture, id: :bead_pack_picture %>
+      </div>
+      
+      <%= f.submit class:"btn btn-default" %>
+    <% end %>
   </div>
-
-  <div class="field">
-  <%= f.collection_select :bead_type_id, BeadType.find_each, :id, :name, prompt: "Select a Bead Type" %> 
-  or create one: <%= f.text_field :new_type_name %>
-  </div> 
-
-  <div class="field">
-  <%= f.collection_select :size_id, Size.find_each, :id, :name, prompt: "Select a Bead Size" %>
-  or create one: <%= f.text_field :new_size_name %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :count %><br>
-    <%= f.text_field :count %>
-  </div>
-  
-  <div class="field">
-    <%= f.file_field :picture, id: :bead_pack_picture %>
-  </div>
-  
-  <!--<div class="field">-->
-  
-  <!--</div>-->
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
